@@ -13,13 +13,14 @@ a{
     margin: 5px auto;
     transition: all 0.2s ease;
 }
-.btn-body:hover{
-    color: #ffff;
-}
-.btn-body:active{
+
+.btn-body:active {
     background-color: #fccfab;
     color: #ffff;
     transform: scale(1.05);
+}
+.btn-body:hover{
+    color: #ffff;
 }
 .btn-title{
     margin: 8px auto;
