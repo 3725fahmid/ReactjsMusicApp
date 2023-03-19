@@ -3,4 +3,14 @@
     height: 100%;
     background-color: #1E2A3E;
     border-radius: 30px;
+    overflow: hidden;
+    background-color: #1E2A3E;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( 
+    circle at center left, transparent 0, #1E2A3E 70px ), 
+    repeating-linear-gradient( #354f5f55, #354f5f );
+}
+
+.flex {
+    display: flex;
 }

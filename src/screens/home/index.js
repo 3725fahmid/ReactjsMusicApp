@@ -33,7 +33,7 @@ const Home = () => {
       <Router>
         <div className='main-body'>
           <SideBar/>
-          <div className="screen-container">
+          {/* <div className="screen-container"> */}
           <Routes>
             <Route path='/' />
             <Route path='/library' element={<Library/>}/>
@@ -42,7 +42,7 @@ const Home = () => {
             <Route path='/player' element={<Player/>}/>
             <Route path='/feeds' element={<Feed/>}/>
           </Routes>
-          </div>
+          {/* </div> */}
         </div>
       </Router> 
   )
