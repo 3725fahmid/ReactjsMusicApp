@@ -1,38 +1,65 @@
 import React from 'react'
 import './ProgressCircle.css'
 
-const Circle = ({ color, percentage, size, stokewidth }) => {
-    const radius = size / 2 -10;
+const Circle = ({ color, percentage, size, strokeWidth }) => {
+    const radius = size / 2 - 10;
     const circ =  2 * Math.PI * radius - 20;
-    const stokePit = (100 - Math.round(percentage) * circ) /100;
+    const strokePit = ((100 - Math.round(percentage)) * circ) /100;
 
     return (
         <circle 
-            r={radius}
+            r ={radius}
             cx="50%"
             cy="50%"
             fill="transparent"
-            stoke={stokePit !== circ ? color : ""}
-            stokewidth={stokewidth}
-            stokeDasharray={percentage ? stokePit : 0}
-            stokeLinecap="round"
+            stroke={strokePit !== circ ? color : ""}
+            strokeWidth={strokeWidth}
+            strokeDasharray={circ}
+            strokeDashoffset={percentage ? strokePit : 0}
+            strokeLinecap="round"
         ></circle>
-    )
-}
+    );
+};
 
-const ProgressCircle = ({percentage, isPalaying, size, color}) => {
+const ProgressCircle = ({ percentage, isPlaying, size, color,image }) => {
     return (
     <div className='progress-circle'>
         <svg width={size} height={size}>
             <g>
-                <Circle stokewidth={"0.4rem"}  color="#3B4F73" size={size}/>
+                <Circle strokeWidth={"0.4rem"}  color="#384F73" size={size}/>
                 <Circle 
-                    stokewidth={"0.6rem"} 
+                    strokeWidth={"0.6rem"} 
                     color={color} 
                     percentage={percentage} 
                     size={size}
                 />
             </g>
+            <defs>
+          <clipPath id="myCircle">
+            <circle cx="50%" cy="50%" r={size / 2 - 30} fill="#FFFFFF" />
+          </clipPath>
+          <clipPath id="myInnerCircle">
+            <circle cx="50%" cy="50%" r={size / 2 - 100} fill="#FFFFFF" />
+          </clipPath>
+        </defs>
+        <image
+          className={isPlaying ? "active" : ""}
+          x={30}
+          y={30}
+          width={2 * (size / 2 - 30)}
+          height={2 * (size / 2 - 30)}
+          href="https://pngimg.com/uploads/vinyl/vinyl_PNG107.png"
+          clipPath="url(#myCircle)"
+        />
+        <image
+          className={isPlaying ? "active" : ""}
+          x={100}
+          y={100}
+          width={2 * (size / 2 - 100)}
+          height={2 * (size / 2 - 100)}
+          href={image}
+          clipPath="url(#myInnerCircle)"
+        />
         </svg>
     </div>
   )
