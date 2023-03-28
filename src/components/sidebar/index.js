@@ -29,7 +29,8 @@ const SideBar = () => {
           <SidebarButton title='Favorite' to="./favorite" icon={<MdFavorite/>}/>
           <SidebarButton title='Library' to="./library" icon={<IoLibrary/>}/>
         </div>
-        <SidebarButton title='SignOut' to="" icon={<FaSignOutAlt/>}/>
+        <SidebarButton title='SignIn' to="./signin" icon={<FaSignOutAlt/>} 
+        />
      </div>
     </>
   )

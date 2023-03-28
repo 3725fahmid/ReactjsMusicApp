@@ -8,6 +8,7 @@ import Player from '../player';
 import "./home.css";
 import SideBar from '../../components/sidebar';
 import Login from '../auth/login';
+import SignIn from '../signin';
 import { setClientToken } from '../../spotify';
 
 const Home = () => {
@@ -41,6 +42,7 @@ const Home = () => {
             <Route path='/tending' element={<Tranding/>}/>
             <Route path='/player' element={<Player/>}/>
             <Route path='/feeds' element={<Feed/>}/>
+            <Route path='/signin' element={<SignIn/>}/>
           </Routes>
           {/* </div> */}
         </div>

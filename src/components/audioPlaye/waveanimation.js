@@ -1,9 +1,9 @@
 import React from 'react'
 import './waveanimation.css'
 
-const WaveAnimation = (isPalaying) => {
+const WaveAnimation = (isPlaying) => {
 
-  const  waveClass = isPalaying ? "box active" : "box";
+  const  waveClass = !isPlaying ? "box " : "box active";
 
   return (
     <div className='box-container'>
